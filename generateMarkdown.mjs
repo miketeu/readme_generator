@@ -1,64 +1,40 @@
-
-/*
-// Creating a function that returns a license badge based on which license is passed in
-function renderLicenseBadge(license) {
-  if (license !== "none") {
-    return `![Github license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`;
-  }
-  return "";
-}
-// Creating a function that returns the license link
-function renderLicenseLink(license) {
-  if (license !== "none") {
-    return `\n* [License](#license)\n`;
-  }
-  return "";
-}
-
-//Creating a function that returns the license section of README
-function renderLicenseSection(license) {
-  if (license !== "none") {
-    return `## License
-        
-        Licensed under the ${license} license.`;
-    return `![Github license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
-  return "";
-}
-
-//Creating a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title} 
-by ${data.name}
-${renderLicenseBadge(data.license)}
-## Description
-${data.description}
-
-## Table of Contents
-* [Description](#description)
-* [Usage](#usage)
-* [How to Use This Application](#How to Use This Application)
-* [Contributors](#contributors)
-
-${renderLicenseLink(data.license)}
-## Description
-${data.description}
-`;
-}
-*/
-/*
-## Deployed Application URL
-${data.link}
-## Screenshot
-[alt-text]("${data.screenshot}")
-*/
-
 // function to generate markdown for README
 function generateMarkdown(data) {
-    return `# ${data.title}
+    return `
+# ${data.title}
   
-  `;
-  }
+
+# ${data.Title}
+https://github.com/${data.Username}/${data.Title}
+# Description
+${data.Description}
+# Table of Contents 
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+# Installation
+The following necessary dependencies must be installed to run the application properly: ${data.Installation}
+# Usage
+In order to use this app, ${data.Usage}
+# License
+This project is licensed under the ${data.License} license. 
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+# Contributing
+​Contributors: ${data.Contributing}
+# Tests
+The following is needed to run the test: ${data.Tests}
+# Questions
+If you have any questions about the repo, open an issue or contact ${data.Username} directly at : ${data.Email}.`
+ }
+
+
+
+
+
   
-  module.exports = generateMarkdown;
+  export default generateMarkdown;
   

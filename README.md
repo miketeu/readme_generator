@@ -1,19 +1,20 @@
 # Project Description
-    My project
+
+    My new project
 
      ## installation
-    clo
+    clone
 
     ## usage
-    fun
+    write readme
 
     ## license
-    mit
+    MIT
 
     ## contributers
     na
     
     ## tests
-    na
+    
     
     

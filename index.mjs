@@ -1,6 +1,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs/promises';
- //import generateMarkdown from './generateMarkdown';
+import generateMarkdown from './generateMarkdown.mjs';
+
 
 let {description, installation, usage, license, contributers, tests} = await inquirer
     .prompt([
@@ -37,9 +38,9 @@ let {description, installation, usage, license, contributers, tests} = await inq
         message: "Select your license from the list.  ",
         choices: ['MIT', 'ISC', 'GNUPLv3'],
        // List of licensing options.
-       filter(val){
-            return val.toLowerCase();
-       }
+      // filter(val){
+       //     return val.toLowerCase();
+      // }
      //List of licenses look in npm inquirer for lists.
     },
 
@@ -55,6 +56,37 @@ let {description, installation, usage, license, contributers, tests} = await inq
         name: 'tests',
         message: 'Enter the details of any tests that are relevent to this project. ',
     },
+    ])
+
+
+ /*   
+// function to write README file
+function writeToFile('README.md', data) {
+
+    fs.writeFile(fileName, data, function(err) {
+        console.log(fileName)
+        console.log(data)
+        if (err) {
+            return console.log(err)
+        } else {
+            console.log("success")
+        }
+    })
+
+}
+*/
+    //Query function
+/*
+    function inquirer(_prompt,questions, QuestionCollection, any) {
+        then((answers) => {
+            console.log(answers)
+            return answers
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    }
+   */ 
 /*
    function generateLicense(license){
       if(license === 'mit'){
@@ -75,10 +107,11 @@ let {description, installation, usage, license, contributers, tests} = await inq
 
     /*List of licences look in npm inquirer for lists. */
    
-    ])
+    
 
 
     let readmeText = `# Project Description
+
     ${description}
 
      ## installation
@@ -99,19 +132,5 @@ let {description, installation, usage, license, contributers, tests} = await inq
     `
 
 
-
+    
     fs.writeFile('README.md', readmeText)
-
- /*
-    // Writing README.md File
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-  }
-  // Initializing app
-  function init() {
-    inquirer.prompt(questions).then((responses) => {
-      console.log("Creating Professional README.md File...");
-      writeToFile("./README.md", ...generateMarkdown({ ...responses }));
-    });
-  }
-  init(); */
