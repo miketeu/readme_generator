@@ -1,13 +1,16 @@
 // function to generate markdown for README
+
+/* 
 function generateMarkdown(data) {
-    return `
-# ${data.title}
+ 
+   `
+# ${title}
   
 
-# ${data.Title}
-https://github.com/${data.Username}/${data.Title}
+# ${title}
+
 # Description
-${data.Description}
+${description}
 # Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -17,24 +20,50 @@ ${data.Description}
 * [Questions](#questions)
 
 # Installation
-The following necessary dependencies must be installed to run the application properly: ${data.Installation}
+The following necessary dependencies must be installed to run the application properly: ${installation}
 # Usage
-In order to use this app, ${data.Usage}
+In order to use this app, ${usage}
 # License
-This project is licensed under the ${data.License} license. 
+This project is licensed under the ${license} license. 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 # Contributing
-​Contributors: ${data.Contributing}
+​Contributors: ${contributing}
 # Tests
-The following is needed to run the test: ${data.Tests}
-# Questions
-If you have any questions about the repo, open an issue or contact ${data.Username} directly at : ${data.Email}.`
+The following is needed to run the test: ${tests} `
  }
+*/
 
-
-
-
-
+let dataReadme = function() {writeToFile('README.md', dataReadMe)
+{`
+ # ${title}
   
-  export default generateMarkdown;
+
+ # ${title}
+ 
+ # Description
+ ${description}
+ # Table of Contents 
+ * [Installation](#installation)
+ * [Usage](#usage)
+ * [License](#license)
+ * [Contributing](#contributing)
+ * [Tests](#tests)
+ * [Questions](#questions)
+ 
+ # Installation
+ The following necessary dependencies must be installed to run the application properly: ${installation}
+ # Usage
+ In order to use this app, ${usage}
+ # License
+ This project is licensed under the ${license} license. 
+ ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+ # Contributing
+ ​Contributors: ${contributing}
+ # Tests
+ The following is needed to run the test: ${tests} `
+};
   
+  exports.generateMarkdown = function () {
+    return dataReadme(); 
+  };
+}

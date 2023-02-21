@@ -47,7 +47,7 @@ let {description, installation, usage, license, contributers, tests} = await inq
   
     {
         type: 'input',
-        name: 'contributers',
+        name: 'contributing',
         message: 'Enter the names of all your contributers to this project.',
     },
 
@@ -110,8 +110,7 @@ function writeToFile('README.md', data) {
     
 
 
-    let readmeText = `# Project Description
-
+  let readmeText = `# Project Description
     ${description}
 
      ## installation
@@ -133,4 +132,4 @@ function writeToFile('README.md', data) {
 
 
     
-    fs.writeFile('README.md', readmeText)
+   fs.writeFile('README.md', readmeText)
