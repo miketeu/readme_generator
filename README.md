@@ -3,7 +3,7 @@
     CLI README.md generator
 
     # Project Description
-    This program will write a README.md file from the answeres given.
+    This program will write a README.md file from the answeres given (once complete).
 
      ## installation
     Clone
