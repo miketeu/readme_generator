@@ -1,4 +1,4 @@
-// function to generate markdown for README
+
 
 /* 
 function generateMarkdown(data) {
@@ -33,8 +33,11 @@ The following is needed to run the test: ${tests} `
  }
 */
 
-let dataReadme = function() {writeToFile('README.md', dataReadMe)
-{`
+
+/*
+function generateMarkdown(readmeText) 
+//let dataReadme = function() {writeToFile('README.md', dataReadMe)
+{ return `
  # ${title}
   
 
@@ -63,7 +66,7 @@ let dataReadme = function() {writeToFile('README.md', dataReadMe)
  The following is needed to run the test: ${tests} `
 };
   
-  exports.generateMarkdown = function () {
-    return dataReadme(); 
-  };
-}
+  
+
+
+export default readmeText() */

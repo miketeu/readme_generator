@@ -1,11 +1,17 @@
 import inquirer from 'inquirer';
 import fs from 'fs/promises';
-import generateMarkdown from './generateMarkdown.mjs';
+//import dataReadMe from './generateMarkdown.mjs';
 
 
-let {description, installation, usage, license, contributers, tests} = await inquirer
+let {title, description, installation, usage, license, contributing, tests} = await inquirer
     .prompt([
         /* Pass in questions here. */
+        {
+            type: 'input',
+            name: 'title',
+            message: "What is the title of your project.  ",
+            //validate: (value) == {if(value){return true}, else: {return: 'I need a value to continue'}
+        },
     {
         type: 'input',
         name: 'description',
@@ -110,7 +116,11 @@ function writeToFile('README.md', data) {
     
 
 
-  let readmeText = `# Project Description
+  let readmeText = `
+    # title
+    ${title}
+
+    # Project Description
     ${description}
 
      ## installation
@@ -123,7 +133,7 @@ function writeToFile('README.md', data) {
     ${license}
 
     ## contributers
-    ${contributers}
+    ${contributing}
     
     ## tests
     ${tests}
@@ -133,3 +143,39 @@ function writeToFile('README.md', data) {
 
     
    fs.writeFile('README.md', readmeText)
+
+   //function generateMarkdown(readmeText) 
+//let dataReadme = function() {writeToFile('README.md', dataReadMe)
+{ //return 
+ `# ${title}
+  
+
+ # ${title}
+ 
+ # Description
+ ${description}
+ # Table of Contents 
+ * [Installation](#installation)
+ * [Usage](#usage)
+ * [License](#license)
+ * [Contributing](#contributing)
+ * [Tests](#tests)
+ * [Questions](#questions)
+ 
+ # Installation
+ The following necessary dependencies must be installed to run the application properly: ${installation}
+ # Usage
+ In order to use this app, ${usage}
+ # License
+ This project is licensed under the ${license} license. 
+ ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+ # Contributing
+ ​Contributors: ${contributing}
+ # Tests
+ The following is needed to run the test: ${tests} `
+};
+  
+  
+//fs.writeFile('README.md', readmeText)
+
+//export default readmeText() 
